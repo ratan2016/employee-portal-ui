@@ -1,0 +1,25 @@
+<p>
+  &nbsp;
+</p>
+
+
+<div class="card bg-light">
+  <article class="card-body mx-auto" style="max-width:100%;">
+    <h4 class="card-title mt-3 text-center">Employee Details</h4>
+
+      <kendo-grid [data]="gridView" [sort]="sort" (sortChange)="sortChange($event)" [pageSize]="10"
+      [pageable]="true" [height]="300">
+        <kendo-grid-column field="firstName" title="First Name">
+        </kendo-grid-column>
+        <kendo-grid-column field="lastName" title="Last Name">
+        </kendo-grid-column>
+        <kendo-grid-column field="gender" title="Gender">
+        </kendo-grid-column>
+        <kendo-grid-column field="dateOfBirth" title="Date Of Birth">
+        </kendo-grid-column>
+        <kendo-grid-column field="department.departmentName" title="Department">
+        </kendo-grid-column>
+      </kendo-grid>
+
+  </article>
+</div> <!-- card.// -->

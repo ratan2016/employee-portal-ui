@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "emp-portal": {
+    "employee-portal-ui": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/emp-portal",
+            "outputPath": "dist/employee-portal-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,6 +23,12 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -58,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "emp-portal:build"
+            "browserTarget": "employee-portal-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "emp-portal:build:production"
+              "browserTarget": "employee-portal-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "emp-portal:build"
+            "browserTarget": "employee-portal-ui:build"
           }
         },
         "test": {
@@ -80,6 +86,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -103,7 +115,7 @@
         }
       }
     },
-    "emp-portal-e2e": {
+    "employee-portal-ui-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +124,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "emp-portal:serve"
+            "devServerTarget": "employee-portal-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "emp-portal:serve:production"
+              "devServerTarget": "employee-portal-ui:serve:production"
             }
           }
         },
@@ -132,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "emp-portal"
+  "defaultProject": "employee-portal-ui"
 }

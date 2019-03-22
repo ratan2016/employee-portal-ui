@@ -1,0 +1,51 @@
+<div class="card bg-light" [formGroup]="registrationFormGroup">
+  <div *ngIf="isSuccess" class="alert alert-success  text-center" role="alert">
+    Employee Registration Successful !!
+  </div>
+  <div *ngIf="isFailed" class="alert alert-error text-center" role="alert">
+    Error: Registration Failed !!
+  </div>
+  <article class="card-body mx-auto" style="max-width: 600px;">
+    <h4 class="card-title mt-3 text-center">Employee Registration</h4>
+
+
+    <div class="form-group input-group">
+      <input name="" class="form-control" formControlName="firstName" placeholder="First name" type="text">
+    </div>
+
+    <div class="form-group input-group">
+      <input name="" class="form-control" formControlName="lastName" placeholder="Last name" type="text">
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+      </div>
+      <select class="custom-select" formControlName="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group input-group" style="height:40px;">
+      <kendo-datepicker style="width: 250px;" [max]="max" [min]="min" formControlName="dateOfBirth"></kendo-datepicker>
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+      </div>
+
+      <select class="custom-select" formControlName="department">
+        <option value=""> Select department</option>
+        <option *ngFor="let department of departments" [value]="department.id"> {{department.departmentName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-primary btn-block" [disabled]="!registrationFormGroup.valid"
+        (click)="registerEmployee()"> Register </button>
+    </div>
+
+  </article>
+</div>
